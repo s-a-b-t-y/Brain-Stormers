@@ -54,8 +54,8 @@ function initNavbar() {
 ───────────────────────────────────────────────────── */
 function initHamburger() {
   const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('navMenu');
-  const overlay = document.getElementById('navOverlay');
+  const navMenu   = document.getElementById('navMenu');
+  const overlay   = document.getElementById('navOverlay');
   let isOpen = false;
 
   hamburger.addEventListener('click', () => {
@@ -112,10 +112,10 @@ function createParticle(container) {
   const p = document.createElement('div');
   p.classList.add('particle');
 
-  const size = randomBetween(4, 20);
-  const left = randomBetween(0, 100);
-  const delay = randomBetween(0, 18);
-  const dur = randomBetween(12, 28);
+  const size   = randomBetween(4, 20);
+  const left   = randomBetween(0, 100);
+  const delay  = randomBetween(0, 18);
+  const dur    = randomBetween(12, 28);
 
   p.style.cssText = `
     width: ${size}px;
@@ -177,16 +177,16 @@ function initCounters() {
 }
 
 function animateCounter(el) {
-  const target = parseInt(el.getAttribute('data-target'), 10);
+  const target   = parseInt(el.getAttribute('data-target'), 10);
   const duration = 2000; // ms
   const startTime = performance.now();
 
   function update(now) {
-    const elapsed = now - startTime;
+    const elapsed  = now - startTime;
     const progress = Math.min(elapsed / duration, 1);
     // Ease out cubic
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(eased * target);
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    const current  = Math.round(eased * target);
     el.textContent = current;
 
     if (progress < 1) {
@@ -233,8 +233,8 @@ function initSmoothScroll() {
    8. ACTIVE NAV LINK (Intersection Observer)
 ───────────────────────────────────────────────────── */
 function initActiveNavLink() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-link');
 
   if (!sections.length || !navLinks.length) return;
 
@@ -287,13 +287,13 @@ function initGalleryHover() {
 
   items.forEach(item => {
     item.addEventListener('mousemove', (e) => {
-      const rect = item.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = (e.clientX - cx) / (rect.width / 2);
-      const dy = (e.clientY - cy) / (rect.height / 2);
-      const rotX = -dy * 5;
-      const rotY = dx * 5;
+      const rect   = item.getBoundingClientRect();
+      const cx     = rect.left + rect.width / 2;
+      const cy     = rect.top  + rect.height / 2;
+      const dx     = (e.clientX - cx) / (rect.width  / 2);
+      const dy     = (e.clientY - cy) / (rect.height / 2);
+      const rotX   = -dy * 5;
+      const rotY   =  dx * 5;
 
       item.style.transform = `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.02)`;
     });
@@ -314,8 +314,8 @@ function initGalleryHover() {
   document.querySelectorAll('.feature-card').forEach(card => {
     card.addEventListener('click', function (e) {
       const ripple = document.createElement('span');
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
+      const rect   = this.getBoundingClientRect();
+      const size   = Math.max(rect.width, rect.height);
       ripple.style.cssText = `
         position: absolute;
         width: ${size}px;
@@ -371,7 +371,7 @@ function initGalleryHover() {
   if (!badge) return;
 
   const onScroll = throttle(() => {
-    const rect = badge.getBoundingClientRect();
+    const rect  = badge.getBoundingClientRect();
     const center = window.innerHeight / 2;
     const offset = (rect.top - center) / center;
     badge.style.transform = `translateY(${offset * -12}px)`;
@@ -391,7 +391,7 @@ function initGalleryHover() {
   const onScroll = throttle(() => {
     const scrolled = window.scrollY;
     heroContainer.style.transform = `translateY(${scrolled * 0.18}px)`;
-    heroContainer.style.opacity = 1 - scrolled / (window.innerHeight * 0.85);
+    heroContainer.style.opacity   = 1 - scrolled / (window.innerHeight * 0.85);
   }, 16);
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -407,18 +407,18 @@ function initGalleryHover() {
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = (e.clientX - cx) / (rect.width / 2);
-      const dy = (e.clientY - cy) / (rect.height / 2);
+      const cx   = rect.left + rect.width / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dx   = (e.clientX - cx) / (rect.width  / 2);
+      const dy   = (e.clientY - cy) / (rect.height / 2);
 
       card.style.transition = 'transform 0.05s ease';
-      card.style.transform = `perspective(700px) rotateY(${dx * 4}deg) rotateX(${-dy * 4}deg) translateZ(8px)`;
+      card.style.transform  = `perspective(700px) rotateY(${dx * 4}deg) rotateX(${-dy * 4}deg) translateZ(8px)`;
     });
 
     card.addEventListener('mouseleave', () => {
       card.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
-      card.style.transform = '';
+      card.style.transform  = '';
     });
   });
 })();
@@ -434,9 +434,9 @@ function initGalleryHover() {
   const originalText = el.textContent.trim();
   el.textContent = '';
   el.style.borderRight = '2px solid rgba(255,140,0,0.7)';
-  el.style.animation = 'none';
-  el.style.opacity = '1';
-  el.style.transform = 'none';
+  el.style.animation   = 'none';
+  el.style.opacity     = '1';
+  el.style.transform   = 'none';
 
   let i = 0;
   let started = false;
@@ -517,7 +517,7 @@ function throttle(fn, delay) {
   document.body.appendChild(bar);
 
   const onScroll = throttle(() => {
-    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const docH    = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = docH > 0 ? (window.scrollY / docH) * 100 : 0;
     bar.style.width = `${scrolled}%`;
   }, 16);
@@ -581,4 +581,31 @@ function throttle(fn, delay) {
   document.head.appendChild(style);
 
   tags.forEach(tag => observer.observe(tag));
+})();
+
+
+/* ─────────────────────────────────────────────────────
+   21. FOUNDER CARD — MOBILE TAP TOGGLE
+       (hover works on desktop; tap toggles on touch)
+───────────────────────────────────────────────────── */
+(function initFounderCard() {
+  const card = document.querySelector('.founder-card');
+  if (!card) return;
+
+  // Only attach tap logic on touch-capable devices
+  let touchDevice = false;
+  window.addEventListener('touchstart', () => { touchDevice = true; }, { once: true });
+
+  card.addEventListener('click', () => {
+    if (!touchDevice) return;          // desktop: CSS :hover handles it
+    card.classList.toggle('info-open');
+  });
+
+  // Close when tapping elsewhere on the page
+  document.addEventListener('click', (e) => {
+    if (!touchDevice) return;
+    if (!card.contains(e.target)) {
+      card.classList.remove('info-open');
+    }
+  });
 })();

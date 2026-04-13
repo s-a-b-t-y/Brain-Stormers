@@ -38,39 +38,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ─── DRAG TO SCROLL (Desktop Gallery) ─── */
-  const slider = document.querySelector('.ach-scroll-container');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  if (slider) {
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      slider.style.cursor = 'grabbing';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; // Scroll speed
-      slider.scrollLeft = scrollLeft - walk;
+  /* ─── INFINITE LOOP CLONING ─── */
+  const grid = document.querySelector('.ach-grid');
+  if (grid) {
+    const cards = Array.from(grid.children);
+    // Clone all cards and append to grid to create a seamless loop
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      grid.appendChild(clone);
     });
   }
+
+  /* ─── GALLERY MODAL LOGIC ─── */
+  const viewMoreBtn = document.getElementById('viewMoreBtn');
+  const galleryModal = document.getElementById('galleryModal');
+  const closeModal = document.getElementById('closeModal');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  function openModal() {
+    galleryModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGallery() {
+    galleryModal.classList.remove('active');
+    // Only restore scroll if hamburger menu is NOT open
+    if (!navMenu.classList.contains('open')) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (viewMoreBtn) viewMoreBtn.addEventListener('click', openModal);
+  if (closeModal) closeModal.addEventListener('click', closeGallery);
+  if (modalOverlay) modalOverlay.addEventListener('click', closeGallery);
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && galleryModal.classList.contains('active')) {
+      closeGallery();
+    }
+  });
 
   /* ─── CUSTOM AOS (Animate On Scroll) ─── */
   function revealOnScroll() {

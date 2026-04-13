@@ -124,11 +124,67 @@
            </div>
         </div>
 
-        <div class="scroll-hint" data-aos>
-           <span><i class="fas fa-arrow-left"></i> Scroll horizontally to see more <i class="fas fa-arrow-right"></i></span>
+        <div class="view-more-container" data-aos>
+           <button id="viewMoreBtn" class="view-more-btn">
+             <span>View More</span>
+             <i class="fas fa-th-large"></i>
+           </button>
         </div>
       </div>
     </section>
+
+    <!-- ===== GALLERY MODAL ===== -->
+    <div id="galleryModal" class="gallery-modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-info">
+            <h3 class="modal-title">Achievement <span class="accent">Gallery</span></h3>
+            <p class="modal-subtitle">Scroll down to see all 31 milestones</p>
+          </div>
+          <button id="closeModal" class="close-modal" aria-label="Close Gallery">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="fullGalleryGrid" class="full-gallery-grid">
+            <!-- Images will be populated here by JS for better management or static if preferred -->
+            <!-- I will keep them static for now to match the style of the page -->
+            <div class="gallery-item"><img src="../Library/achievement-album/1.jpg" alt="Gallery 1"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/2.jpg" alt="Gallery 2"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/3.jpg" alt="Gallery 3"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/4.jpg" alt="Gallery 4"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/5.jpg" alt="Gallery 5"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/6.jpg" alt="Gallery 6"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/7.jpg" alt="Gallery 7"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/8.jpg" alt="Gallery 8"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/9.jpg" alt="Gallery 9"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/10.jpg" alt="Gallery 10"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/11.jpg" alt="Gallery 11"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/12.jpg" alt="Gallery 12"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/13.jpg" alt="Gallery 13"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/14.jpg" alt="Gallery 14"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/15.jpg" alt="Gallery 15"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/16.jpg" alt="Gallery 16"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/17.jpg" alt="Gallery 17"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/18.jpg" alt="Gallery 18"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/19.jpg" alt="Gallery 19"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/20.jpg" alt="Gallery 20"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/21.jpg" alt="Gallery 21"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/22.jpg" alt="Gallery 22"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/23.jpg" alt="Gallery 23"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/24.jpg" alt="Gallery 24"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/25.jpg" alt="Gallery 25"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/26.jpg" alt="Gallery 26"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/27.jpg" alt="Gallery 27"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/28.jpg" alt="Gallery 28"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/29.jpg" alt="Gallery 29"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/30.jpg" alt="Gallery 30"></div>
+            <div class="gallery-item"><img src="../Library/achievement-album/medical.jpg" alt="Gallery Medical"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">

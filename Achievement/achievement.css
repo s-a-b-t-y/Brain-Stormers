@@ -1,4 +1,4 @@
-/* ===== CSS VARIABLES (Match with About Page) ===== */
+/* ===== CSS VARIABLES (Match with Home Page) ===== */
 :root {
   --navy: #0d1b3e;
   --navy-mid: #1a2b52;
@@ -24,10 +24,21 @@
 }
 
 /* ===== RESET & BASE ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--amber-light);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -83,6 +94,20 @@ img { max-width: 100%; display: block; }
 
 .accent { color: var(--amber); }
 
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--amber);
+  border-radius: 3px;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
@@ -92,43 +117,82 @@ img { max-width: 100%; display: block; }
   z-index: 1000;
   background: rgba(13, 27, 62, 0);
   backdrop-filter: blur(0px);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 76px;
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
+  padding: 0;
 }
 
 .navbar.scrolled {
-  background: rgba(248, 246, 240, 0.95);
+  background: rgba(248, 246, 240, 0.97);
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 30px rgba(13, 27, 62, 0.1);
+  box-shadow: 0 2px 30px rgba(13, 27, 62, 0.12);
 }
 
 .nav-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
-  height: 100%;
+  padding: 0 28px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 }
 
-.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(232, 130, 12, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo:hover .logo-icon {
+  filter: drop-shadow(0 4px 16px rgba(232, 130, 12, 0.5));
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo-main {
   font-family: "Playfair Display", serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
-  transition: color 0.5s ease;
+  line-height: 1;
+  transition: color 0.4s;
+  white-space: nowrap;
 }
 
 .logo-sub {
   font-size: 0.62rem;
+  font-weight: 400;
   color: rgba(248, 246, 240, 0.6);
-  display: block;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-top: 3px;
+  transition: color 0.4s;
+  white-space: nowrap;
 }
 
-.navbar.scrolled .logo-main { color: var(--navy); }
-.navbar.scrolled .logo-sub { color: var(--grey); }
+.navbar.scrolled .logo-main {
+  color: var(--navy);
+}
+
+.navbar.scrolled .logo-sub {
+  color: var(--grey);
+}
 
 .nav-menu { display: flex; align-items: center; gap: 8px; }
 .nav-link {

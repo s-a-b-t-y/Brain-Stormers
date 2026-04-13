@@ -5,20 +5,20 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  --navy: #0D1B3E;
-  --navy-mid: #1A2B52;
+  --navy: #0d1b3e;
+  --navy-mid: #1a2b52;
   --navy-light: #2d4a8a;
-  --amber: #E8820C;
+  --amber: #e8820c;
   --amber-dark: #c06808;
   --amber-light: #f09a2a;
-  --white: #F8F6F0;
-  --off-white: #EEF0F5;
-  --grey: #8892A4;
-  --grey-light: #C8D0DC;
-  --text: #1A1F2E;
-  --text-light: #4A5568;
-  --card-bg: #FFFFFF;
-  --section-alt: #F2F4F8;
+  --white: #f8f6f0;
+  --off-white: #eef0f5;
+  --grey: #8892a4;
+  --grey-light: #c8d0dc;
+  --text: #1a1f2e;
+  --text-light: #4a5568;
+  --card-bg: #ffffff;
+  --section-alt: #f2f4f8;
   --shadow-sm: 0 2px 12px rgba(13, 27, 62, 0.08);
   --shadow-md: 0 8px 32px rgba(13, 27, 62, 0.12);
   --shadow-lg: 0 20px 60px rgba(13, 27, 62, 0.18);
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-::selection{
+::selection {
   color: #fff;
   background-color: var(--amber-light);
 }
@@ -48,7 +48,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: var(--text);
   background: var(--white);
   overflow-x: hidden;
@@ -121,7 +121,7 @@ img {
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   color: var(--navy);
@@ -147,7 +147,7 @@ img {
   gap: 10px;
   padding: 14px 30px;
   border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -158,7 +158,7 @@ img {
 }
 
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.15);
@@ -219,7 +219,9 @@ img {
 [data-aos] {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 [data-aos].aos-visible {
@@ -269,9 +271,12 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(13, 27, 62, 0.0);
+  background: rgba(13, 27, 62, 0);
   backdrop-filter: blur(0px);
-  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background 0.4s ease,
+    backdrop-filter 0.4s ease,
+    box-shadow 0.4s ease;
   padding: 0;
 }
 
@@ -317,7 +322,7 @@ img {
 }
 
 .logo-main {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
@@ -357,7 +362,9 @@ img {
   color: rgba(248, 246, 240, 0.85);
   padding: 8px 14px;
   border-radius: 8px;
-  transition: color 0.3s, background 0.3s;
+  transition:
+    color 0.3s,
+    background 0.3s;
   white-space: nowrap;
 }
 
@@ -386,7 +393,10 @@ img {
   font-weight: 700;
   border-radius: 100px;
   margin-left: 10px;
-  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
   white-space: nowrap;
   box-shadow: 0 4px 16px rgba(232, 130, 12, 0.3);
 }
@@ -453,9 +463,18 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(45, 74, 138, 0.5) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(232, 130, 12, 0.12) 0%, transparent 50%),
-    linear-gradient(135deg, #0D1B3E 0%, #131f3c 50%, #0a1628 100%);
+  background:
+    radial-gradient(
+      ellipse at 70% 50%,
+      rgba(45, 74, 138, 0.5) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 20% 80%,
+      rgba(232, 130, 12, 0.12) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, #0d1b3e 0%, #131f3c 50%, #0a1628 100%);
 }
 
 .hero-noise {
@@ -507,7 +526,12 @@ img {
 
 .geo-line {
   position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(232, 130, 12, 0.15), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 130, 12, 0.15),
+    transparent
+  );
   height: 1px;
   animation: lineFade 4s ease-in-out infinite;
 }
@@ -538,7 +562,6 @@ img {
 }
 
 @keyframes lineFade {
-
   0%,
   100% {
     opacity: 0;
@@ -590,7 +613,6 @@ img {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     opacity: 1;
@@ -616,7 +638,7 @@ img {
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -700,7 +722,7 @@ img {
 
 .hcf-stat strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--amber);
@@ -770,7 +792,6 @@ img {
 }
 
 @keyframes bounce {
-
   0%,
   100% {
     transform: translateY(0);
@@ -798,13 +819,16 @@ img {
   padding: 36px 28px;
   border: 1px solid rgba(13, 27, 62, 0.06);
   box-shadow: var(--shadow-sm);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
 .why-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -845,7 +869,7 @@ img {
   background: rgba(232, 130, 12, 0.15);
 }
 
-.wc-icon-wrap>i {
+.wc-icon-wrap > i {
   position: absolute;
   inset: 0;
   display: flex;
@@ -858,7 +882,7 @@ img {
 }
 
 .why-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--navy);
@@ -926,13 +950,19 @@ img {
 .founder-hover-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(13, 27, 62, 0.92) 0%, rgba(13, 27, 62, 0.98) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(13, 27, 62, 0.92) 0%,
+    rgba(13, 27, 62, 0.98) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
   border-radius: var(--radius-lg);
 }
 
@@ -957,7 +987,7 @@ img {
 }
 
 .fho-ring::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 6px;
   border-radius: 50%;
@@ -965,7 +995,7 @@ img {
 }
 
 .fho-content h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
@@ -1032,7 +1062,9 @@ img {
   justify-content: center;
   color: var(--white);
   font-size: 0.85rem;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .fho-socials a:hover {
@@ -1117,8 +1149,17 @@ img {
 .ach-hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 20%, rgba(45, 74, 138, 0.5) 0%, transparent 60%),
-    radial-gradient(ellipse at 10% 80%, rgba(232, 130, 12, 0.1) 0%, transparent 50%);
+  background:
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(45, 74, 138, 0.5) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 10% 80%,
+      rgba(232, 130, 12, 0.1) 0%,
+      transparent 50%
+    );
   pointer-events: none;
 }
 
@@ -1136,7 +1177,10 @@ img {
   border-radius: var(--radius);
   padding: 40px 24px;
   text-align: center;
-  transition: background 0.35s, border-color 0.35s, transform 0.35s;
+  transition:
+    background 0.35s,
+    border-color 0.35s,
+    transform 0.35s;
 }
 
 .stat-box:hover {
@@ -1159,7 +1203,7 @@ img {
 }
 
 .stat-num {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 700;
   color: var(--white);
@@ -1180,7 +1224,7 @@ img {
 }
 
 .slider-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.3rem;
   font-weight: 600;
   color: rgba(248, 246, 240, 0.4);
@@ -1197,7 +1241,7 @@ img {
 
 .slider-overflow::before,
 .slider-overflow::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1245,7 +1289,10 @@ img {
   width: 280px;
   flex-shrink: 0;
   overflow: hidden;
-  transition: border-color 0.3s, background 0.3s, transform 0.3s;
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.3s;
 }
 
 .ach-card:hover {
@@ -1276,7 +1323,7 @@ img {
 }
 
 .ach-body h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1rem;
   font-weight: 600;
   color: var(--white);
@@ -1306,12 +1353,15 @@ img {
   border-radius: var(--radius-lg);
   padding: 40px 32px;
   position: relative;
-  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+  transition:
+    transform 0.35s,
+    box-shadow 0.35s,
+    border-color 0.35s;
   overflow: hidden;
 }
 
 .prog-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
@@ -1330,13 +1380,13 @@ img {
   border-color: var(--navy-light);
 }
 
-.prog-card>* {
+.prog-card > * {
   position: relative;
   z-index: 1;
 }
 
 .prog-num {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   font-weight: 700;
   color: rgba(13, 27, 62, 0.06);
@@ -1370,7 +1420,7 @@ img {
 }
 
 .prog-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--navy);
@@ -1401,7 +1451,9 @@ img {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--amber);
-  transition: gap 0.3s, color 0.45s;
+  transition:
+    gap 0.3s,
+    color 0.45s;
 }
 
 .prog-link:hover {
@@ -1460,7 +1512,10 @@ img {
   border: 1px solid rgba(13, 27, 62, 0.07);
   border-radius: var(--radius-sm);
   padding: 16px 18px;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .fac-item:hover {
@@ -1505,7 +1560,9 @@ img {
   border-radius: var(--radius-lg);
   padding: 36px 28px;
   position: relative;
-  transition: transform 0.35s, box-shadow 0.35s;
+  transition:
+    transform 0.35s,
+    box-shadow 0.35s;
 }
 
 .testi-card:hover {
@@ -1542,7 +1599,7 @@ img {
   line-height: 1;
 }
 
-.testi-card>p {
+.testi-card > p {
   font-size: 0.93rem;
   color: var(--text-light);
   line-height: 1.75;
@@ -1563,7 +1620,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--white);
@@ -1591,7 +1648,7 @@ img {
   font-size: 0.75rem;
 }
 
-.testi-stars i+i {
+.testi-stars i + i {
   margin-left: 1px;
 }
 
@@ -1633,7 +1690,11 @@ img {
 .cta-noise {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(45, 74, 138, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(45, 74, 138, 0.4) 0%,
+    transparent 70%
+  );
 }
 
 .cta-content {
@@ -1656,7 +1717,7 @@ img {
 }
 
 .cta-h {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 700;
   color: var(--white);
@@ -1807,7 +1868,10 @@ img {
   justify-content: center;
   font-size: 0.85rem;
   color: rgba(248, 246, 240, 0.5);
-  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
 }
 
 .footer-socials a:hover {
@@ -1817,7 +1881,7 @@ img {
 }
 
 .footer-col h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--white);
@@ -1838,7 +1902,9 @@ img {
   gap: 8px;
   font-size: 0.88rem;
   color: rgba(248, 246, 240, 0.45);
-  transition: color 0.3s, gap 0.3s;
+  transition:
+    color 0.3s,
+    gap 0.3s;
 }
 
 .footer-col ul a i {
@@ -1906,7 +1972,10 @@ img {
   opacity: 0;
   transform: translateY(20px);
   pointer-events: none;
-  transition: opacity 0.35s, transform 0.35s, background 0.3s;
+  transition:
+    opacity 0.35s,
+    transform 0.35s,
+    background 0.3s;
   z-index: 999;
 }
 
@@ -2022,7 +2091,9 @@ img {
     gap: 4px;
     transform: translateY(-120%);
     opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s;
+    transition:
+      transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      opacity 0.4s;
     pointer-events: none;
     border-bottom: 1px solid rgba(248, 246, 240, 0.08);
   }

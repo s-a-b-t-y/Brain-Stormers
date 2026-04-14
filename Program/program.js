@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const startCarousel = () => {
           carouselInterval = setInterval(() => {
               updateCarousel((currentIndex + 1) % cards.length);
-          }, 3500); // 3.5 seconds
+          }, 4500); // 4.5 seconds
       };
       
       startCarousel();

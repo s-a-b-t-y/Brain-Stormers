@@ -18,6 +18,8 @@
       href="../Library/Favicon/favicon.png"
       type="image/x-icon"
     />
+    <!-- Modal CSS -->
+    <link rel="stylesheet" href="../modal.css" />
   </head>
 
   <body>
@@ -184,6 +186,35 @@
       </div>
     </footer>
 
+    <!-- ===== ENROLL MODAL ===== -->
+    <div class="enroll-modal-overlay" id="enrollModal">
+      <div class="enroll-modal">
+        <button class="em-close" id="emClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+        <div class="em-content">
+          <div class="em-section">
+            <h3 class="em-heading">Ask your question on our Whatsapp</h3>
+            <p class="em-desc">Click the WhatsApp icon below to chat with us directly and get all your questions answered instantly.</p>
+            <a href="https://wa.me/8801602942795" target="_blank" class="em-social-btn whatsapp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <div class="em-divider"></div>
+          <div class="em-section">
+            <h3 class="em-heading">Visit our more platform</h3>
+            <div class="em-socials">
+              <a href="https://www.youtube.com/channel/UC617Cusr6fyNm_f1_KgOw0A" target="_blank" class="em-social-btn youtube">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/brainstormersbd" target="_blank" class="em-social-btn facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="about.js"></script>
+    <script src="../modal.js"></script>
   </body>
 </html>

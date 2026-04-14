@@ -1,0 +1,152 @@
+/* ===== ENROLL MODAL ===== */
+.enroll-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 62, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: 20px;
+}
+
+.enroll-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.enroll-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 20px 60px rgba(13, 27, 62, 0.2);
+}
+
+.enroll-modal-overlay.active .enroll-modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.em-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(238, 240, 245, 0.8);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1f2e;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.em-close:hover {
+  background: #e8820c;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.em-content {
+  text-align: center;
+}
+
+.em-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.em-heading {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  color: #0d1b3e;
+  margin-bottom: 5px;
+}
+
+.em-desc {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.em-social-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #ffffff;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.em-social-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.em-social-btn.youtube {
+  background: linear-gradient(135deg, #FF0000, #CC0000);
+}
+
+.em-social-btn.facebook {
+  background: linear-gradient(135deg, #1877F2, #0C5ECA);
+}
+
+.em-social-btn:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.em-divider {
+  width: 100%;
+  height: 1px;
+  background: #eef0f5;
+  margin: 30px 0;
+}
+
+.em-socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .enroll-modal {
+    padding: 30px 20px;
+  }
+  
+  .em-heading {
+    font-size: 1.2rem;
+  }
+
+  .em-desc {
+    font-size: 0.85rem;
+  }
+  
+  .em-social-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}

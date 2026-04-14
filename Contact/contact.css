@@ -513,9 +513,7 @@ img, video { max-width: 100%; display: block; }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-@media (max-width: 768px) {
   .nav-menu { display: none; }
   .hamburger { display: flex; }
   
@@ -534,7 +532,9 @@ img, video { max-width: 100%; display: block; }
     z-index: 999;
     animation: slideDown 0.4s ease;
   }
+}
 
+@media (max-width: 768px) {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 40px;

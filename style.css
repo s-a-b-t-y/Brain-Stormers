@@ -2073,7 +2073,7 @@ img {
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .hamburger {
     display: flex;
   }
@@ -2118,7 +2118,9 @@ img {
     justify-content: center;
     padding: 14px 24px;
   }
+}
 
+@media (max-width: 768px) {
   .section-pad {
     padding: 72px 0;
   }
